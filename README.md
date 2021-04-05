@@ -32,7 +32,7 @@ I did not include the mobile screenshots since it is very long ahahaa
 
 ### Links
 
-Live Site URL: [Live site of the challenge hosted here](https://pikapikamart.github.io/project-tracking/)
+Live Site URL: [Live site of the challenge hosted here](https://pikapikamart.github.io/frontendmentor-clipboard/)
 
 ## My process
 
