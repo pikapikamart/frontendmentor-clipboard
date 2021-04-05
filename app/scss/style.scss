@@ -1,0 +1,387 @@
+@use "variables";
+@use "extensions";
+
+// HTML ELEMENT PRESETS
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+body {
+    background: #FFFFFF url("../images/bg-header-desktop.png") no-repeat center top;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-size: 1.125rem;
+    margin: 0 auto;
+    max-width: 1600px;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+h1 {
+    color: variables.$dg-blue;
+    font-size: 2.5rem;
+    margin-top: 3.8125rem;
+}
+
+h2 {
+    color: variables.$dg-blue;
+    font-size: 2.125rem;
+}
+
+h3 {
+    color: variables.$dg-blue;
+    font-size: 24px;
+}
+
+p {
+    color: variables.$g-blue;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+footer {
+    background-color: #F5F6F8;
+    height: 9.375rem;
+    padding: 0 10.25rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+// PRIMARY
+.flex {
+    display: flex;
+
+    &--column {
+        flex-direction: column;
+    }
+
+    // Align
+    &--a-center {
+        align-items: center;
+    }
+
+    // Custom Flex
+    &--button-gap {
+        gap: 0 1rem;
+    }
+
+    &--section-2 {
+        gap: 61px 0;
+        margin-top: 4rem;
+        padding-left: 110px;
+    }
+
+    &--footer-social {
+        gap: 0 1.5625rem;
+        margin-left: auto;
+        
+        svg {
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+        path {
+            transition: fill 0.3s ease;
+
+            &:hover {
+                fill: variables.$s-cyan;
+            }
+        }
+    }
+}
+
+.grid {
+    display: grid;
+
+    &--computer {
+        grid-template-columns: repeat(2, minmax(350px, 720px));
+        grid-template-rows: 572px;
+        margin-top: 83px;
+
+        > img {
+            height: 100%;
+            transform: translateX(-0.5rem);
+            width: 100%;
+        }
+    }
+
+    &--footer {
+        gap: 1.375rem;
+        grid-template-columns: repeat(3, 8rem);
+        grid-template-rows: repeat(2, auto);
+        margin-left: clamp(4rem, 7vw, 8.375rem);
+
+        a {
+            color: variables.$dg-blue;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: variables.$s-cyan;
+            }
+
+        }
+    }
+}
+
+.header{
+    padding: 8.125rem 2rem 0;
+}
+
+.desktop {
+    overflow: hidden;
+    padding: 155px 2rem 0 0; 
+}
+
+.tablet {
+    gap: 114px 0;
+    padding: 152px 0 75px; 
+}
+
+.overview {
+    gap: 4.6875rem 0;
+    margin-bottom: 10.375rem;
+    padding: 0 2rem;
+    text-align: center
+}
+
+.feature {
+    grid-template-columns: repeat(3, minmax(10rem, 25rem));
+    grid-template-rows: auto;
+    justify-content: center;
+
+    .heading--sub-2 {
+        width: 100%;
+    }
+}
+
+.computer {
+    padding-top: 83px;
+}
+
+.partnerships {
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 10.125rem;
+    padding: 0 clamp(5rem, 10vw ,10.25rem);
+}
+
+.cta {
+    gap: 3.1875rem 0;
+    margin-bottom: 9.375rem
+}
+
+
+// CUSTOM
+.heading--main {
+    @extend %heading;
+    @extend %heading--center;
+    gap: 22px 0;
+    margin-bottom: 51px;
+}
+
+.heading--sub-1 {
+    @extend %heading;
+    @extend %heading--center;
+    gap: 25px 0;
+    width: 45rem
+}
+
+.heading--sub-2 {
+    @extend %heading;
+    gap: 12px 0;
+    width: 70%;
+}
+
+.button--ios {
+    @extend %button;
+    @extend %button--ios;
+}
+
+.button--mac {
+    @extend %button;
+    @extend %button--mac;
+}
+
+.feature--icon {
+    margin-bottom: 2.5rem;
+}
+
+.feature--icon-t {
+    margin-bottom: 3rem;
+}
+
+// MEDIAS
+@media (max-width: 1000px) {
+
+    // HTML ELEMENT
+    footer {
+        padding: 0 2rem;
+    }
+
+    .flex {
+
+        &--section-2 {
+            padding-left: 2rem;
+        }
+    }
+
+    .tablet {
+
+        > img {
+            width: 100%;
+        }
+    }
+
+    .partnerships{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem 2rem;
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 750px) {
+
+    // HTML ELEMENT
+    body {
+        background-image: url(../images/bg-header-mobile.png);
+        background-size: 100%;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+        margin-top: 4.25rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    h3 {
+        font-size: 1.375rem;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 44px 0;
+        height: auto;
+        padding: 52px 2rem;
+        text-align: center;
+    }
+
+    // Primary
+    .header {
+        padding: 7.625rem 2rem 0 ;
+    }
+
+    .flex {
+
+        &--button-gap {
+            flex-direction: column;
+            gap: 1.5rem 0;
+            width: 100%;
+        }
+
+        &--section-2 {
+            align-items: center;
+            margin-top: 3.6875rem;
+            padding: 0;
+            text-align: center;
+        }
+
+        &--footer-social {
+            margin-left: 0;
+        }
+    }
+
+    .grid {
+
+        &--computer {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, auto);
+            margin-top: 4.25rem;
+
+            > img {
+                height: auto;
+            }
+        }
+
+        &--footer {
+            gap: 1.5rem 0;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(5, auto);
+            margin-left: 0;
+        }
+    }
+
+    .desktop {
+        padding: 10rem 2rem 0;
+    }
+
+    .tablet {
+        gap: 4rem 0;
+        padding: 11.875rem 2rem 4.8675rem;
+    }
+
+    .overview {
+        margin-bottom: 8.375rem;
+    }
+
+    .feature {
+        gap: 5rem 0;
+        grid-template-columns: 1fr;
+    }
+
+    .partnerships {
+        align-items: center;
+        flex-direction: column;
+        gap: 4.125rem 0;
+        margin-bottom: 10.75rem;
+    }
+
+    .cta {
+        padding: 0 2rem;
+    }
+
+    // Custom
+    .button--ios,
+    .button--mac {
+        width: 100%;
+    }
+
+    .heading--main {
+        width: 100%;
+    }
+
+    .heading--sub-1 {
+        gap: 1.3125rem 0;
+        width: 100%;
+    }
+
+    .feature--icon,
+    .feature--icon-t {
+        margin-bottom: 2rem;
+    }
+
+}
