@@ -96,13 +96,13 @@ footer {
             &:hover {
                 transform: scale(1.1);
             }
+
+            &:hover > path {
+                fill: variables.$s-cyan;
+            }
         }
         path {
             transition: fill 0.3s ease;
-
-            &:hover {
-                fill: variables.$s-cyan;
-            }
         }
     }
 }
