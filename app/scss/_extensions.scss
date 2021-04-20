@@ -18,6 +18,7 @@
     display: flex;
     height: 56px;
     justify-content: center;
+    outline: none;
     transition: opacity 0.3s ease;
     width: 228px;
 
@@ -28,8 +29,20 @@
 
 %button--ios {
     background-color: variables.$s-cyan;
+
+    &:focus {
+        box-shadow: inset 0 -0.25rem 0 rgba(0, 0, 0, 0.1),
+                    0 0 1px 0.15rem #FFFFFF,
+                    0 0 1px 0.3rem variables.$s-cyan;
+    }
 }
 
 %button--mac {
     background-color: variables.$l-blue;
+
+    &:focus {
+        box-shadow: inset 0 -0.25rem 0 rgba(0, 0, 0, 0.1),
+                    0 0 1px 0.15rem #FFFFFF,
+                    0 0 1px 0.3rem variables.$l-blue;
+    }
 }
